@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_footer_height"
+    >
+
+    <Button
+        android:id="@+id/add_definition_button"
+        style="?borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/item_footer_add_definition__add_button"
+        app:icon="@drawable/ic_open_browser_20dp"
+        app:iconGravity="textEnd"
+        />
+
+</FrameLayout>

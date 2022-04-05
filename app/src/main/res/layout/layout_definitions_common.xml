@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.FrameLayout"
+    >
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/definitions_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:visibility="gone"
+        >
+
+        <dev.olshevski.udu.view.ExtendedRecyclerView
+            android:id="@+id/definitions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:dividerColor="?dividerColor"
+            app:dividerHeight="@dimen/divider_height"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_definition"
+            />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_layout"
+        style="@android:style/Widget.Material.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:visibility="gone"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        tools:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/error_emoticon"
+            style="@style/WarningEmoticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:visibility="@integer/layout_definitions_common__error_emoticon_visibility"
+            app:layout_constraintBottom_toTopOf="@id/error_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_emoticon_error"
+            />
+
+        <TextView
+            android:id="@+id/error_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/layout_definitions_common__error_title"
+            android:textAppearance="?textAppearanceHeadline4"
+            app:layout_constraintBottom_toTopOf="@id/error_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_chainStyle="packed"
+            />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/layout_definitions_common__error_message"
+            android:textAppearance="?textAppearanceBody2"
+            app:layout_constraintBottom_toTopOf="@id/retry_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/error_title"
+            />
+
+        <Button
+            android:id="@+id/retry_button"
+            style="?materialButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/layout_definitions_common__retry_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/error_message"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</merge>

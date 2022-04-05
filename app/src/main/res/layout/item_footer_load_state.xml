@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_footer_height"
+    >
+
+    <ProgressBar
+        android:id="@+id/progress_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:visibility="gone"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:id="@+id/retry_button"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/item_footer_load_state__retry_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/error_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/item_footer_load_state__error_title"
+            android:textAppearance="?textAppearanceSubtitle2"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/error_message"
+            app:layout_constraintEnd_toStartOf="@id/retry_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/item_footer_load_state__error_message"
+            android:textAppearance="?textAppearanceBody2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/error_title"
+            app:layout_constraintStart_toStartOf="@id/error_title"
+            app:layout_constraintTop_toBottomOf="@id/error_title"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

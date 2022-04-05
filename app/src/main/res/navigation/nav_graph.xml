@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/wordsOfTheDayFragment"
+    tools:ignore="UnusedNavigation"
+    >
+
+    <fragment
+        android:id="@+id/wordsOfTheDayFragment"
+        android:name="dev.olshevski.udu.ui.wordsoftheday.WordsOfTheDayFragment"
+        android:label="WordsOfTheDayFragment"
+        tools:layout="@layout/fragment_paged_definitions"
+        />
+
+    <fragment
+        android:id="@+id/randomWordsFragment"
+        android:name="dev.olshevski.udu.ui.randomwords.RandomWordsFragment"
+        android:label="RandomWordsFragment"
+        tools:layout="@layout/fragment_paged_definitions"
+        />
+
+    <fragment
+        android:id="@+id/definitionsFragment"
+        android:name="dev.olshevski.udu.ui.definitions.DefinitionsFragment"
+        android:label="DefinitionsFragment"
+        tools:layout="@layout/fragment_definitions"
+        >
+
+        <argument
+            android:name="definition_key"
+            app:argType="dev.olshevski.udu.ui.definitions.model.DefinitionKey"
+            />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/aboutDialog"
+        android:name="dev.olshevski.udu.ui.about.AboutDialog"
+        android:label="AboutDialog"
+        />
+
+    <action
+        android:id="@+id/to_randomWordsFragment"
+        app:destination="@id/randomWordsFragment"
+        app:enterAnim="@anim/nav_anim_side_enter"
+        app:exitAnim="@anim/nav_anim_side_exit"
+        app:popEnterAnim="@anim/nav_anim_side_pop_enter"
+        app:popExitAnim="@anim/nav_anim_side_pop_exit"
+        />
+
+    <action
+        android:id="@+id/to_definitionsFragment"
+        app:destination="@id/definitionsFragment"
+        app:enterAnim="@anim/nav_anim_side_enter"
+        app:exitAnim="@anim/nav_anim_side_exit"
+        app:popEnterAnim="@anim/nav_anim_side_pop_enter"
+        app:popExitAnim="@anim/nav_anim_side_pop_exit"
+        />
+
+    <action
+        android:id="@+id/pop_up_to_wordsOfTheDayFragment"
+        app:popEnterAnim="@anim/nav_anim_side_pop_enter"
+        app:popExitAnim="@anim/nav_anim_side_pop_exit"
+        app:popUpTo="@id/wordsOfTheDayFragment"
+        />
+
+    <action
+        android:id="@+id/to_aboutDialog"
+        app:destination="@id/aboutDialog"
+        />
+
+</navigation>

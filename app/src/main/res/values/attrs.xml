@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- additional theme attributes -->
+    <declare-styleable name="AppTheme">
+        <attr name="colorUpvote" format="color" />
+        <attr name="colorDownvote" format="color" />
+        <attr name="toolbarIconColor" format="color" />
+        <attr name="dividerColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ExtendedRecyclerView">
+        <attr name="dividerHeight" format="dimension" />
+        <attr name="dividerColor" /> <!-- format="color" -->
+    </declare-styleable>
+
+</resources>

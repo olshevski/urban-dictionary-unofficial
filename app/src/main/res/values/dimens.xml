@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- common values -->
+    <dimen name="item_footer_height">96dp</dimen>
+    <dimen name="divider_height">1px</dimen>
+    <dimen name="pressed_alpha">0.6</dimen>
+
+    <!-- toolbar_background_height = toolbar_height + 16dp (two paddings 8dp each) -->
+    <dimen name="toolbar_height">44dp</dimen>
+    <dimen name="toolbar_container_height">60dp</dimen>
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- visibility constants that can be used here in dimens.xml -->
+    <integer name="view_visible">0</integer>
+    <integer name="view_invisible">1</integer>
+    <integer name="view_gone">2</integer>
+
+    <!-- values dependant on screen size -->
+    <integer name="max_suggestion_preview_lines">2</integer>
+    <integer name="fragment_definitions__no_definition_emoticon_visibility">
+        @integer/view_gone
+    </integer>
+    <integer name="layout_definitions_common__error_emoticon_visibility">
+        @integer/view_gone
+    </integer>
+
+    <!-- animation durations -->
+    <integer name="nav_anim_side_duration">150</integer>
+    <integer name="nav_anim_bottom_duration">150</integer>
+    <integer name="shade_view_anim_duration">150</integer>
+
+</resources>

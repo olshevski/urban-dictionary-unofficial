@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- palette -->
+    <color name="dark_blue">#0062B3</color>
+    <color name="semi_dark_blue">#007ECC</color>
+    <color name="blue">#0086D9</color>
+    <color name="light_blue">#64c1ff</color>
+    <color name="dark_grey">#333333</color>
+    <color name="grey">#707070</color>
+    <color name="light_grey">#999999</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#64dd17</color>
+    <color name="red">#ff3d00</color>
+
+    <!-- 0.32 transparency as in material dialogs background-->
+    <color name="shade">#52000000</color>
+
+    <color name="ic_launcher_background">#008EE6</color>
+
+</resources>

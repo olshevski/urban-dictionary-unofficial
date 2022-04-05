@@ -1,0 +1,89 @@
+/**
+ * Signs release build with the specified signature parameters. When parameters are omitted the
+ * release APK file will be left unsigned.
+ *
+ * By default, keystore.properties file in the project's or root project's folder will be used as a
+ * source of required signing data:
+ *
+ *     storeFile=/Users/me/keyvault/release.keystore
+ *     storePassword=pass123
+ *     keyAlias=sampleAlias
+ *     keyPassword=pass123
+ *
+ * Otherwise you can use this optional command line parameters:
+ *
+ *     keystorePropertiesFile - path to your properties file with "storeFile", "storePassword",
+ *     "keyAlias", "keyPassword" properties
+ *
+ *     storeFile - path to your keystore file
+ *
+ *     storePassword, keyAlias, keyPassword - all other signature data for the specified keystore
+ *
+ * Examples:
+ *
+ *     gradlew assembleRelease -PstoreFile=/Users/me/keyvault/release.keystore
+ *     -PstorePassword=pass123 -PkeyAlias=sampleAlias -PkeyPassword=pass123
+ *
+ *     gradlew assembleRelease -PkeystorePropertiesFile=/Users/me/keyvault/keystore.properties
+ *
+ * It is ok to specify partial data in properties file and all the other data with command line
+ * parameters:
+ *
+ *     gradlew assembleRelease -PkeystorePropertiesFile=/Users/me/keyvault/keystore.properties
+ *     -PstorePassword=pass123 -PkeyPassword=pass123
+ */
+
+final String KEYSTORE_PROPERTIES_FILENAME = "keystore.properties"
+String inputStoreFile, inputStorePassword, inputKeyAlias, inputKeyPassword
+
+// try to read signing data from local or custom keystore.properties
+File keystorePropertiesFile
+if (project.hasProperty('keystorePropertiesFile') && project.keystorePropertiesFile) {
+    keystorePropertiesFile = file(project.keystorePropertiesFile)
+} else {
+    File[] keystorePropertiesLocations = [
+            project.file(KEYSTORE_PROPERTIES_FILENAME),
+            project.rootProject.file(KEYSTORE_PROPERTIES_FILENAME)
+    ]
+    keystorePropertiesFile = keystorePropertiesLocations.find { it.exists() }
+}
+if (keystorePropertiesFile?.exists()) {
+    Properties keystoreProperties = new Properties()
+    keystoreProperties.load(keystorePropertiesFile.newReader())
+    inputStoreFile = keystoreProperties.getProperty('storeFile')
+    inputStorePassword = keystoreProperties.getProperty('storePassword')
+    inputKeyAlias = keystoreProperties.getProperty('keyAlias')
+    inputKeyPassword = keystoreProperties.getProperty('keyPassword')
+}
+
+// then try to read all command line parameters
+if (project.hasProperty('storeFile') && project.storeFile) {
+    inputStoreFile = project.storeFile
+}
+if (project.hasProperty('storePassword') && project.storePassword) {
+    inputStorePassword = project.storePassword
+}
+if (project.hasProperty('keyAlias') && project.keyAlias) {
+    inputKeyAlias = project.keyAlias
+}
+if (project.hasProperty('keyPassword') && project.keyPassword) {
+    inputKeyPassword = project.keyPassword
+}
+
+// if all needed info is supplied then generate signing config
+if (inputStoreFile && inputStorePassword && inputKeyAlias && inputKeyPassword) {
+    android {
+        signingConfigs {
+            release {
+                storeFile file(inputStoreFile)
+                storePassword inputStorePassword
+                keyAlias inputKeyAlias
+                keyPassword inputKeyPassword
+            }
+        }
+    }
+    android.buildTypes["release"].signingConfig = android.signingConfigs.release
+    println "Release configuration generated. Release APK will be SIGNED."
+} else {
+    println "Release configuration omitted. Release APK will be left UNSIGNED."
+}

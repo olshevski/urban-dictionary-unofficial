@@ -1,0 +1,23 @@
+buildscript {
+    apply from: "versions.gradle"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

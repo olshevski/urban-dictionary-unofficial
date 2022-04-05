@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="fragment_definitions__no_definition_emoticon_visibility">
+        @integer/view_visible
+    </integer>
+    <integer name="layout_definitions_common__error_emoticon_visibility">
+        @integer/view_visible
+    </integer>
+</resources>

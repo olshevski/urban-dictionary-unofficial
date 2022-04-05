@@ -1,0 +1,33 @@
+<resources>
+
+    <style name="VoteButton">
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:minWidth">96dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="RateButton" parent="VoteButton">
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+
+    <style name="DefinitionTopBadge">
+        <item name="android:background">?colorSecondary</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textAppearance">?textAppearanceOverline</item>
+        <item name="android:textColor">?colorOnSecondary</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="WarningEmoticon">
+        <item name="tint">?colorOnBackground</item>
+    </style>
+
+</resources>

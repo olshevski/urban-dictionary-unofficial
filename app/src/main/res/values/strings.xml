@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Urban Dictionary</string>
+    <string name="chooser_title_contact_developer">Contact developer</string>
+    <string name="activity_main__search_hint">Search in dictionary</string>
+    <string name="activity_main__random_words_title">Random words</string>
+    <string name="menu_default__random_words">Random words</string>
+    <string name="menu_default__define_new_word">Define new word</string>
+    <string name="menu_default__about">About</string>
+    <string name="menu_search__clear_search">Clear search</string>
+    <string name="item_definition__by_whom">by %s</string>
+    <string name="layout_definitions_common__error_title">Oooopsie!</string>
+    <string name="layout_definitions_common__error_message">Something went wrong. Please check your connection and try again.</string>
+    <string name="layout_definitions_common__retry_button">Retry</string>
+    <string name="fragment_definitions__no_definition_message">Cannot find any definitions for</string>
+    <string name="fragment_definitions__add_definition_button">Define it</string>
+    <string name="item_footer_load_state__error_title">Oooopsie!</string>
+    <string name="item_footer_load_state__error_message">Something went wrong</string>
+    <string name="item_footer_load_state__retry_button">Retry</string>
+    <string name="item_footer_add_definition__add_button">Add your definition</string>
+    <string name="dialog_about__title">About</string>
+    <string name="dialog_about__message">Unofficial [urbandictionary.com] client. Written solely for practicing and evolving my own professional skills in creating beautiful Android applications.\n\nIf this app gets more active users I\'ll consider developing it further and adding more features.</string>
+    <string name="dialog_about__message_italic">TBD.</string>
+    <string name="dialog_about__author">by Vitali Olshevski</string>
+    <string name="dialog_about__rate">Rate this app</string>
+</resources>

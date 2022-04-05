@@ -1,0 +1,10 @@
+rootProject.ext {
+    versions = [
+            // in alphabetical order
+            kotest    : '4.0.6',
+            lifecycle : '2.2.0',
+            moshi     : '1.9.2',
+            navigation: '2.3.0',
+            retrofit  : '2.9.0',
+    ]
+}

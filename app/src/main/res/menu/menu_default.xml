@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/random_words"
+        android:icon="@drawable/ic_random_24dp"
+        android:title="@string/menu_default__random_words"
+        app:iconTint="?toolbarIconColor"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/define_new_word"
+        android:title="@string/menu_default__define_new_word"
+        app:iconTint="?toolbarIconColor"
+        />
+
+    <item
+        android:id="@+id/about"
+        android:title="@string/menu_default__about"
+        app:iconTint="?toolbarIconColor"
+        />
+
+</menu>

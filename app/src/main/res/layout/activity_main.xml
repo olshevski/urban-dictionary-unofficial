@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <!-- separate from toolbar, because it must be placed under the shade -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_container_height"
+            android:background="?colorPrimary"
+            android:elevation="4dp"
+            />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"
+            />
+
+    </LinearLayout>
+
+    <!-- clickable="true" is used to prevent clicks underneath the shade -->
+    <dev.olshevski.udu.view.ShadeView
+        android:id="@+id/search_shade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/shade"
+        android:clickable="true"
+        tools:ignore="KeyboardInaccessibleWidget"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="2dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <!--
+             * end margin for toolbar icons symmetry
+             * android:focusableInTouchMode="true" - prevents child EditText to receive focus on
+               activity start for some older API levels (e.g. 21)
+             * left/right padding is set to zero in order to override bigger padding in default
+               style for tablets
+            -->
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                android:layout_marginEnd="4dp"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:navigationIcon="@drawable/ic_search_24dp"
+                tools:ignore="RtlHardcoded"
+                >
+
+                <EditText
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="@string/activity_main__search_hint"
+                    android:imeOptions="actionSearch|flagNoExtractUi"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textAppearance="?textAppearanceBody1"
+                    />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <View
+                android:id="@+id/suggestions_separator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="?dividerColor"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/suggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_suggestion"
+                />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

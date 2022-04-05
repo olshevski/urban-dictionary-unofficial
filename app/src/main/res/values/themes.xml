@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- main material components colors -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/dark_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/light_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/grey</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorOnBackground">@color/grey</item>
+
+        <!-- text colors -->
+        <item name="android:textColorPrimary">@color/dark_grey</item>
+        <item name="android:textColorSecondary">@color/grey</item>
+        <item name="android:textColorHint">@color/light_grey</item>
+        <item name="android:textColorLink">@color/semi_dark_blue</item>
+
+        <!-- status bar -->
+        <item name="android:statusBarColor">?colorPrimaryVariant</item>
+
+        <!-- other colors -->
+        <item name="colorUpvote">@color/green</item>
+        <item name="colorDownvote">@color/red</item>
+        <item name="toolbarIconColor">?colorOnSurface</item>
+        <item name="dividerColor">@color/light_grey</item>
+
+        <!-- default text appearances -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.AppTheme.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.AppTheme.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.AppTheme.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.AppTheme.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.AppTheme.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.AppTheme.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.AppTheme.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.AppTheme.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.AppTheme.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.AppTheme.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppTheme.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.AppTheme.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.AppTheme.Overline</item>
+
+        <!-- toolbar navigation and overflow button styles -->
+        <item name="toolbarNavigationButtonStyle">@style/Widget.AppTheme.ToolbarNavigationButton
+        </item>
+        <item name="actionOverflowButtonStyle">@style/Widget.AppTheme.ActionOverflowButton</item>
+
+    </style>
+
+    <!-- https://developer.android.com/topic/performance/vitals/launch-time#solutions-3 -->
+    <style name="AppTheme.SplashScreen">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/lora_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/lora_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/lora_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/lora_medium</item>
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/lora_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/lora_medium</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/opensans_regular</item>
+    </style>
+
+    <style name="Widget.AppTheme.ActionOverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="tint">?toolbarIconColor</item>
+    </style>
+
+    <style name="Widget.AppTheme.ToolbarNavigationButton" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="tint">?toolbarIconColor</item>
+    </style>
+
+</resources>

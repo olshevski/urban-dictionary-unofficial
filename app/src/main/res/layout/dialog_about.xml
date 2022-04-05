@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/dialog_about__title"
+            android:textAppearance="?textAppearanceHeadline4"
+            app:layout_constraintEnd_toStartOf="@id/version"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/version"
+            style="@style/DefinitionTopBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/title"
+            app:layout_constraintTop_toTopOf="@id/title"
+            tools:ignore="SmallSp"
+            tools:text="1.0.0"
+            />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/dialog_about__message"
+            android:textAppearance="?textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            />
+
+        <!-- occupies the space of exactly one line, with scaled text or not -->
+        <TextView
+            android:id="@+id/spacer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?textAppearanceBody2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/message"
+            app:layout_constraintStart_toStartOf="@id/message"
+            app:layout_constraintTop_toBottomOf="@id/message"
+            />
+
+        <TextView
+            android:id="@+id/message_italic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_about__message_italic"
+            android:textAppearance="?textAppearanceBody2"
+            android:textStyle="italic"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/message"
+            app:layout_constraintStart_toStartOf="@id/message"
+            app:layout_constraintTop_toBottomOf="@id/spacer"
+            />
+
+        <TextView
+            android:id="@+id/builtOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?textAppearanceCaption"
+            app:layout_constraintEnd_toEndOf="@id/message"
+            app:layout_constraintTop_toTopOf="@id/author"
+            tools:text="@tools:sample/date/ddmmyy"
+            />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@string/dialog_about__author"
+            android:textAppearance="?textAppearanceCaption"
+            app:layout_constraintEnd_toStartOf="@id/builtOn"
+            app:layout_constraintStart_toStartOf="@id/message"
+            app:layout_constraintTop_toBottomOf="@id/message_italic"
+            />
+
+        <TextView
+            android:id="@+id/rate"
+            style="@style/RateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/dialog_about__rate"
+            android:textColor="@color/definition_icon"
+            android:visibility="invisible"
+            app:drawableStartCompat="@drawable/ic_star_20dp"
+            app:drawableTint="@color/upvote"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/author"
+            />
+
+        <ImageView
+            android:id="@+id/mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rate"
+            app:srcCompat="@drawable/ic_mail_20dp"
+            app:tint="@color/definition_icon"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+
+# Intellij
+.idea/*
+*.iml
+!.idea/codeStyles
+!.idea/saveactions_settings.xml
+!.idea/inspectionProfiles
+
+# keystore
+*.jks
+*.keystore
+keystore.properties
